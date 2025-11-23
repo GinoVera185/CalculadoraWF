@@ -1,0 +1,193 @@
+﻿namespace CalculadoraWF;
+
+partial class Form1
+{
+    /// <summary>
+    ///  Required designer variable.
+    /// </summary>
+    private System.ComponentModel.IContainer components = null;
+
+    /// <summary>
+    ///  Clean up any resources being used.
+    /// </summary>
+    /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+    protected override void Dispose(bool disposing)
+    {
+        if (disposing && (components != null))
+        {
+            components.Dispose();
+        }
+        base.Dispose(disposing);
+    }
+
+    #region Windows Form Designer generated code
+
+    /// <summary>
+    ///  Required method for Designer support - do not modify
+    ///  the contents of this method with the code editor.
+    /// </summary>
+    private void InitializeComponent()
+    {
+        label1 = new Label();
+        label2 = new Label();
+        txt_Num1 = new TextBox();
+        txt_Num2 = new TextBox();
+        label3 = new Label();
+        btn_Suma = new Button();
+        btn_Resta = new Button();
+        btn_Mult = new Button();
+        btn_Dividir = new Button();
+        Result = new Label();
+        btn_Limpiar = new Button();
+        SuspendLayout();
+        // 
+        // label1
+        // 
+        label1.AutoSize = true;
+        label1.Font = new Font("Arial", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+        label1.Location = new Point(12, 28);
+        label1.Name = "label1";
+        label1.Size = new Size(148, 33);
+        label1.TabIndex = 0;
+        label1.Text = "Numero1:";
+        // 
+        // label2
+        // 
+        label2.AutoSize = true;
+        label2.Font = new Font("Arial", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+        label2.Location = new Point(12, 61);
+        label2.Name = "label2";
+        label2.Size = new Size(148, 33);
+        label2.TabIndex = 1;
+        label2.Text = "Numero2:";
+        // 
+        // txt_Num1
+        // 
+        txt_Num1.Font = new Font("Arial", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+        txt_Num1.Location = new Point(166, 22);
+        txt_Num1.Name = "txt_Num1";
+        txt_Num1.Size = new Size(122, 34);
+        txt_Num1.TabIndex = 1;
+        txt_Num1.Validating += txt_Num1_Validating;
+        // 
+        // txt_Num2
+        // 
+        txt_Num2.Font = new Font("Arial", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+        txt_Num2.Location = new Point(166, 67);
+        txt_Num2.Name = "txt_Num2";
+        txt_Num2.Size = new Size(122, 34);
+        txt_Num2.TabIndex = 2;
+        txt_Num2.Validating += txt_Num2_Validating;
+        // 
+        // label3
+        // 
+        label3.AutoSize = true;
+        label3.Font = new Font("Arial", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+        label3.Location = new Point(12, 114);
+        label3.Name = "label3";
+        label3.Size = new Size(160, 33);
+        label3.TabIndex = 4;
+        label3.Text = "Resultado:";
+        // 
+        // btn_Suma
+        // 
+        btn_Suma.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+        btn_Suma.Location = new Point(23, 171);
+        btn_Suma.Name = "btn_Suma";
+        btn_Suma.Size = new Size(107, 49);
+        btn_Suma.TabIndex = 5;
+        btn_Suma.Text = "Suma(+)";
+        btn_Suma.UseVisualStyleBackColor = true;
+        btn_Suma.Click += btn_Suma_Click;
+        // 
+        // btn_Resta
+        // 
+        btn_Resta.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+        btn_Resta.Location = new Point(23, 235);
+        btn_Resta.Name = "btn_Resta";
+        btn_Resta.Size = new Size(107, 49);
+        btn_Resta.TabIndex = 6;
+        btn_Resta.Text = "Resta(-)";
+        btn_Resta.UseVisualStyleBackColor = true;
+        btn_Resta.Click += btn_Resta_Click;
+        // 
+        // btn_Mult
+        // 
+        btn_Mult.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+        btn_Mult.Location = new Point(148, 171);
+        btn_Mult.Name = "btn_Mult";
+        btn_Mult.Size = new Size(173, 49);
+        btn_Mult.TabIndex = 7;
+        btn_Mult.Text = "Multiplicación(*)";
+        btn_Mult.UseVisualStyleBackColor = true;
+        btn_Mult.Click += btn_Mult_Click;
+        // 
+        // btn_Dividir
+        // 
+        btn_Dividir.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+        btn_Dividir.Location = new Point(151, 235);
+        btn_Dividir.Name = "btn_Dividir";
+        btn_Dividir.Size = new Size(137, 49);
+        btn_Dividir.TabIndex = 8;
+        btn_Dividir.Text = "División(/)";
+        btn_Dividir.UseVisualStyleBackColor = true;
+        btn_Dividir.Click += btn_Dividir_Click;
+        // 
+        // Result
+        // 
+        Result.AutoSize = true;
+        Result.Font = new Font("Arial", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+        Result.Location = new Point(178, 118);
+        Result.Name = "Result";
+        Result.Size = new Size(25, 26);
+        Result.TabIndex = 9;
+        Result.Text = "0";
+        // 
+        // btn_Limpiar
+        // 
+        btn_Limpiar.Font = new Font("Arial", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+        btn_Limpiar.Location = new Point(69, 310);
+        btn_Limpiar.Name = "btn_Limpiar";
+        btn_Limpiar.Size = new Size(134, 44);
+        btn_Limpiar.TabIndex = 10;
+        btn_Limpiar.Text = "Limpiar";
+        btn_Limpiar.UseVisualStyleBackColor = true;
+        btn_Limpiar.Click += btn_Limpiar_Click;
+        // 
+        // Form1
+        // 
+        AutoScaleDimensions = new SizeF(8F, 20F);
+        AutoScaleMode = AutoScaleMode.Font;
+        BackColor = SystemColors.ActiveBorder;
+        ClientSize = new Size(344, 393);
+        Controls.Add(btn_Limpiar);
+        Controls.Add(Result);
+        Controls.Add(btn_Dividir);
+        Controls.Add(btn_Mult);
+        Controls.Add(btn_Resta);
+        Controls.Add(btn_Suma);
+        Controls.Add(label3);
+        Controls.Add(txt_Num2);
+        Controls.Add(txt_Num1);
+        Controls.Add(label2);
+        Controls.Add(label1);
+        Name = "Form1";
+        Text = "Form1";
+        ResumeLayout(false);
+        PerformLayout();
+    }
+
+    #endregion
+
+    private Label label1;
+    private Label label2;
+    private TextBox txt_Num1;
+    private TextBox txt_Num2;
+    private Label label3;
+    private Button btn_Suma;
+    private Button btn_Resta;
+    private Button btn_Mult;
+    private Button btn_Dividir;
+    private Label Result;
+    private Button btn_Limpiar;
+}
