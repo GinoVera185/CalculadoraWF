@@ -39,7 +39,7 @@ partial class Form1
         btn_Dividir = new Button();
         Result = new Label();
         btn_Limpiar = new Button();
-        button1 = new Button();
+        btn_potencia = new Button();
         SuspendLayout();
         // 
         // label1
@@ -161,17 +161,17 @@ partial class Form1
         btn_Limpiar.UseVisualStyleBackColor = false;
         btn_Limpiar.Click += btn_Limpiar_Click;
         // 
-        // button1
+        // btn_potencia
         // 
-        button1.BackColor = Color.PaleVioletRed;
-        button1.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-        button1.Location = new Point(23, 305);
-        button1.Name = "button1";
-        button1.Size = new Size(137, 49);
-        button1.TabIndex = 11;
-        button1.Text = "Potencia(^)";
-        button1.UseVisualStyleBackColor = false;
-        button1.Click += button1_Click;
+        btn_potencia.BackColor = Color.PaleVioletRed;
+        btn_potencia.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+        btn_potencia.Location = new Point(23, 305);
+        btn_potencia.Name = "btn_potencia";
+        btn_potencia.Size = new Size(137, 49);
+        btn_potencia.TabIndex = 11;
+        btn_potencia.Text = "Potencia(^)";
+        btn_potencia.UseVisualStyleBackColor = false;
+        btn_potencia.Click += button1_Click;
         // 
         // Form1
         // 
@@ -179,7 +179,7 @@ partial class Form1
         AutoScaleMode = AutoScaleMode.Font;
         BackColor = Color.Thistle;
         ClientSize = new Size(365, 393);
-        Controls.Add(button1);
+        Controls.Add(btn_potencia);
         Controls.Add(btn_Limpiar);
         Controls.Add(Result);
         Controls.Add(btn_Dividir);
@@ -210,5 +210,5 @@ partial class Form1
     private Button btn_Dividir;
     private Label Result;
     private Button btn_Limpiar;
-    private Button button1;
+    private Button btn_potencia;
 }
