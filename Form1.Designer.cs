@@ -39,6 +39,7 @@ partial class Form1
         btn_Dividir = new Button();
         Result = new Label();
         btn_Limpiar = new Button();
+        button1 = new Button();
         SuspendLayout();
         // 
         // label1
@@ -66,7 +67,7 @@ partial class Form1
         txt_Num1.Font = new Font("Arial", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
         txt_Num1.Location = new Point(166, 22);
         txt_Num1.Name = "txt_Num1";
-        txt_Num1.Size = new Size(122, 34);
+        txt_Num1.Size = new Size(187, 34);
         txt_Num1.TabIndex = 1;
         txt_Num1.Validating += txt_Num1_Validating;
         // 
@@ -75,7 +76,7 @@ partial class Form1
         txt_Num2.Font = new Font("Arial", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
         txt_Num2.Location = new Point(166, 67);
         txt_Num2.Name = "txt_Num2";
-        txt_Num2.Size = new Size(122, 34);
+        txt_Num2.Size = new Size(187, 34);
         txt_Num2.TabIndex = 2;
         txt_Num2.Validating += txt_Num2_Validating;
         // 
@@ -91,46 +92,51 @@ partial class Form1
         // 
         // btn_Suma
         // 
+        btn_Suma.BackColor = Color.PaleVioletRed;
         btn_Suma.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+        btn_Suma.ForeColor = Color.Black;
         btn_Suma.Location = new Point(23, 171);
         btn_Suma.Name = "btn_Suma";
         btn_Suma.Size = new Size(107, 49);
         btn_Suma.TabIndex = 5;
         btn_Suma.Text = "Suma(+)";
-        btn_Suma.UseVisualStyleBackColor = true;
+        btn_Suma.UseVisualStyleBackColor = false;
         btn_Suma.Click += btn_Suma_Click;
         // 
         // btn_Resta
         // 
+        btn_Resta.BackColor = Color.PaleVioletRed;
         btn_Resta.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
         btn_Resta.Location = new Point(23, 235);
         btn_Resta.Name = "btn_Resta";
         btn_Resta.Size = new Size(107, 49);
         btn_Resta.TabIndex = 6;
         btn_Resta.Text = "Resta(-)";
-        btn_Resta.UseVisualStyleBackColor = true;
+        btn_Resta.UseVisualStyleBackColor = false;
         btn_Resta.Click += btn_Resta_Click;
         // 
         // btn_Mult
         // 
+        btn_Mult.BackColor = Color.PaleVioletRed;
         btn_Mult.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-        btn_Mult.Location = new Point(148, 171);
+        btn_Mult.Location = new Point(178, 171);
         btn_Mult.Name = "btn_Mult";
         btn_Mult.Size = new Size(173, 49);
         btn_Mult.TabIndex = 7;
         btn_Mult.Text = "Multiplicación(*)";
-        btn_Mult.UseVisualStyleBackColor = true;
+        btn_Mult.UseVisualStyleBackColor = false;
         btn_Mult.Click += btn_Mult_Click;
         // 
         // btn_Dividir
         // 
+        btn_Dividir.BackColor = Color.PaleVioletRed;
         btn_Dividir.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-        btn_Dividir.Location = new Point(151, 235);
+        btn_Dividir.Location = new Point(178, 235);
         btn_Dividir.Name = "btn_Dividir";
         btn_Dividir.Size = new Size(137, 49);
         btn_Dividir.TabIndex = 8;
         btn_Dividir.Text = "División(/)";
-        btn_Dividir.UseVisualStyleBackColor = true;
+        btn_Dividir.UseVisualStyleBackColor = false;
         btn_Dividir.Click += btn_Dividir_Click;
         // 
         // Result
@@ -145,21 +151,35 @@ partial class Form1
         // 
         // btn_Limpiar
         // 
-        btn_Limpiar.Font = new Font("Arial", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-        btn_Limpiar.Location = new Point(69, 310);
+        btn_Limpiar.BackColor = Color.SlateBlue;
+        btn_Limpiar.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+        btn_Limpiar.Location = new Point(178, 307);
         btn_Limpiar.Name = "btn_Limpiar";
         btn_Limpiar.Size = new Size(134, 44);
         btn_Limpiar.TabIndex = 10;
         btn_Limpiar.Text = "Limpiar";
-        btn_Limpiar.UseVisualStyleBackColor = true;
+        btn_Limpiar.UseVisualStyleBackColor = false;
         btn_Limpiar.Click += btn_Limpiar_Click;
+        // 
+        // button1
+        // 
+        button1.BackColor = Color.PaleVioletRed;
+        button1.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+        button1.Location = new Point(23, 305);
+        button1.Name = "button1";
+        button1.Size = new Size(137, 49);
+        button1.TabIndex = 11;
+        button1.Text = "Potencia(^)";
+        button1.UseVisualStyleBackColor = false;
+        button1.Click += button1_Click;
         // 
         // Form1
         // 
         AutoScaleDimensions = new SizeF(8F, 20F);
         AutoScaleMode = AutoScaleMode.Font;
-        BackColor = SystemColors.ActiveBorder;
-        ClientSize = new Size(344, 393);
+        BackColor = Color.Thistle;
+        ClientSize = new Size(365, 393);
+        Controls.Add(button1);
         Controls.Add(btn_Limpiar);
         Controls.Add(Result);
         Controls.Add(btn_Dividir);
@@ -172,7 +192,7 @@ partial class Form1
         Controls.Add(label2);
         Controls.Add(label1);
         Name = "Form1";
-        Text = "Form1";
+        Text = "Calculadora";
         ResumeLayout(false);
         PerformLayout();
     }
@@ -190,4 +210,5 @@ partial class Form1
     private Button btn_Dividir;
     private Label Result;
     private Button btn_Limpiar;
+    private Button button1;
 }
