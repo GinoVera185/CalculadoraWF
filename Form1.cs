@@ -2,7 +2,7 @@ namespace CalculadoraWF;
 
 public partial class Form1 : Form
 {
-    float num1, num2, resultado;
+    double num1, num2, resultado;
     public Form1()
     {
         InitializeComponent();
@@ -10,7 +10,7 @@ public partial class Form1 : Form
 
     private void txt_Num1_Validating(object sender, System.ComponentModel.CancelEventArgs e)
     {
-        if (!float.TryParse(txt_Num1.Text, out num1))
+        if (!double.TryParse(txt_Num1.Text, out num1))
         {
             e.Cancel = true;
             MessageBox.Show("Tipo de dato incorrecto");
@@ -19,7 +19,7 @@ public partial class Form1 : Form
 
     private void txt_Num2_Validating(object sender, System.ComponentModel.CancelEventArgs e)
     {
-        if (!float.TryParse(txt_Num2.Text, out num2))
+        if (!double.TryParse(txt_Num2.Text, out num2))
         {
             e.Cancel = true;
             MessageBox.Show("Tipo de dato incorrecto");
@@ -55,5 +55,11 @@ public partial class Form1 : Form
         txt_Num1.Clear();
         txt_Num2.Clear();
         Result.Text = "0";
+    }
+
+    private void button1_Click(object sender, EventArgs e)
+    {
+        resultado = Math.Pow(num1, num2);
+        Result.Text = resultado.ToString("F2");
     }
 }
