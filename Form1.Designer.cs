@@ -40,7 +40,8 @@ partial class Form1
         Result = new Label();
         btn_Limpiar = new Button();
         btn_potencia = new Button();
-        btn_calcular = new Button();
+        btn_residuo = new Button();
+        btn_HistorialOp = new Button();
         SuspendLayout();
         // 
         // label1
@@ -154,7 +155,7 @@ partial class Form1
         // 
         btn_Limpiar.BackColor = Color.SlateBlue;
         btn_Limpiar.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-        btn_Limpiar.Location = new Point(23, 372);
+        btn_Limpiar.Location = new Point(181, 372);
         btn_Limpiar.Name = "btn_Limpiar";
         btn_Limpiar.Size = new Size(134, 44);
         btn_Limpiar.TabIndex = 10;
@@ -174,17 +175,29 @@ partial class Form1
         btn_potencia.UseVisualStyleBackColor = false;
         btn_potencia.Click += button1_Click;
         // 
-        // btn_calcular
+        // btn_residuo
         // 
-        btn_calcular.BackColor = Color.Crimson;
-        btn_calcular.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-        btn_calcular.Location = new Point(178, 305);
-        btn_calcular.Name = "btn_calcular";
-        btn_calcular.Size = new Size(137, 49);
-        btn_calcular.TabIndex = 12;
-        btn_calcular.Text = "Calcular";
-        btn_calcular.UseVisualStyleBackColor = false;
-        btn_calcular.Click += btn_calcular_Click;
+        btn_residuo.BackColor = Color.PaleVioletRed;
+        btn_residuo.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+        btn_residuo.Location = new Point(178, 305);
+        btn_residuo.Name = "btn_residuo";
+        btn_residuo.Size = new Size(137, 49);
+        btn_residuo.TabIndex = 12;
+        btn_residuo.Text = "mod (%)";
+        btn_residuo.UseVisualStyleBackColor = false;
+        btn_residuo.Click += btn_calcular_Click;
+        // 
+        // btn_HistorialOp
+        // 
+        btn_HistorialOp.BackColor = Color.SlateBlue;
+        btn_HistorialOp.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+        btn_HistorialOp.Location = new Point(23, 372);
+        btn_HistorialOp.Name = "btn_HistorialOp";
+        btn_HistorialOp.Size = new Size(134, 44);
+        btn_HistorialOp.TabIndex = 13;
+        btn_HistorialOp.Text = "Historial";
+        btn_HistorialOp.UseVisualStyleBackColor = false;
+        btn_HistorialOp.Click += btn_HistorialOp_Click;
         // 
         // Form1
         // 
@@ -192,7 +205,8 @@ partial class Form1
         AutoScaleMode = AutoScaleMode.Font;
         BackColor = Color.Thistle;
         ClientSize = new Size(365, 428);
-        Controls.Add(btn_calcular);
+        Controls.Add(btn_HistorialOp);
+        Controls.Add(btn_residuo);
         Controls.Add(btn_potencia);
         Controls.Add(btn_Limpiar);
         Controls.Add(Result);
@@ -206,6 +220,7 @@ partial class Form1
         Controls.Add(label2);
         Controls.Add(label1);
         Name = "Form1";
+        StartPosition = FormStartPosition.CenterScreen;
         Text = "Calculadora";
         ResumeLayout(false);
         PerformLayout();
@@ -225,5 +240,6 @@ partial class Form1
     private Label Result;
     private Button btn_Limpiar;
     private Button btn_potencia;
-    private Button btn_calcular;
+    private Button btn_residuo;
+    private Button btn_HistorialOp;
 }

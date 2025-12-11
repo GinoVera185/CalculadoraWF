@@ -2,21 +2,19 @@ namespace CalculadoraWF;
 
 public partial class Form1 : Form
 {
-    double num1, num2, resultado;
-    bool parsedNum1 = false, parsedNum2 = false;
+    public double num1, num2, resultado;
+    private bool parsedNum1 = false, parsedNum2 = false;
+    public string nombreArchivo = "Historial.dat";
+    public string operacion;
 
     public Form1()
     {
         InitializeComponent();
 
-        // Estado inicial: btn_calcular bloqueado hasta que haya dos números válidos
-        btn_calcular.Enabled = false;
-
-        // Suscribir cambios de texto para validar en tiempo real
         txt_Num1.TextChanged += TxtInputs_TextChanged;
         txt_Num2.TextChanged += TxtInputs_TextChanged;
 
-        // Asegurar estado inicial de variables
+
         UpdateInputs();
     }
 
@@ -29,9 +27,6 @@ public partial class Form1 : Form
     {
         parsedNum1 = double.TryParse(txt_Num1.Text, out num1);
         parsedNum2 = double.TryParse(txt_Num2.Text, out num2);
-
-        // Habilitar btn_calcular solo si ambos son válidos
-        btn_calcular.Enabled = parsedNum1 && parsedNum2;
     }
 
     private void txt_Num1_Validating(object sender, System.ComponentModel.CancelEventArgs e)
@@ -64,10 +59,16 @@ public partial class Form1 : Form
 
     private void btn_Suma_Click(object sender, EventArgs e)
     {
+
         if (!EnsureInputsValid()) return;
 
         resultado = num1 + num2;
-        // Resultado NO se muestra aquí; se mostrará al pulsar btn_calcular
+
+        Result.Text = resultado.ToString("F2");
+
+        operacion = num1.ToString() + " + " + num2.ToString();
+
+        Archivo.GuardarOperacion(operacion, nombreArchivo);
     }
 
     private void btn_Resta_Click(object sender, EventArgs e)
@@ -75,6 +76,12 @@ public partial class Form1 : Form
         if (!EnsureInputsValid()) return;
 
         resultado = num1 - num2;
+
+        Result.Text = resultado.ToString("F2");
+
+        operacion = num1.ToString() + " - " + num2.ToString();
+
+        Archivo.GuardarOperacion(operacion, nombreArchivo);
     }
 
     private void btn_Mult_Click(object sender, EventArgs e)
@@ -82,6 +89,11 @@ public partial class Form1 : Form
         if (!EnsureInputsValid()) return;
 
         resultado = num1 * num2;
+
+        Result.Text = resultado.ToString("F2");
+
+        operacion = num1.ToString() + " * " + num2.ToString();
+        Archivo.GuardarOperacion(operacion, nombreArchivo);
     }
 
     private void btn_Dividir_Click(object sender, EventArgs e)
@@ -95,6 +107,11 @@ public partial class Form1 : Form
         }
 
         resultado = num1 / num2;
+
+        Result.Text = resultado.ToString("F2");
+
+        operacion = num1.ToString() + " / " + num2.ToString();
+        Archivo.GuardarOperacion(operacion, nombreArchivo);
     }
 
     private void btn_Limpiar_Click(object sender, EventArgs e)
@@ -106,7 +123,7 @@ public partial class Form1 : Form
         // Reiniciar estado
         resultado = 0;
         parsedNum1 = parsedNum2 = false;
-        btn_calcular.Enabled = false;
+        btn_residuo.Enabled = false;
     }
 
     private void button1_Click(object sender, EventArgs e)
@@ -114,12 +131,27 @@ public partial class Form1 : Form
         if (!EnsureInputsValid()) return;
 
         resultado = Math.Pow(num1, num2);
+
+        Result.Text = resultado.ToString("F2");
+
+        operacion = num1.ToString() + "pow(" + num2.ToString() + ")";
+        Archivo.GuardarOperacion(operacion, nombreArchivo);
     }
 
     private void btn_calcular_Click(object sender, EventArgs e)
     {
-        // Mostrar el último resultado calculado
+        if (!EnsureInputsValid()) return;
+        if (num2 == 0)
+        {
+            MessageBox.Show("No se puede calcular el residuo con divisor cero.");
+            return;
+        }
+        resultado = num1 % num2;
+
         Result.Text = resultado.ToString("F2");
+
+        operacion = num1.ToString() + "mod(" + num2.ToString() + ")";
+        Archivo.GuardarOperacion(operacion, nombreArchivo);
     }
 
     // Comprueba que ambos inputs sean válidos; muestra mensaje si no lo son.
@@ -135,5 +167,11 @@ public partial class Form1 : Form
         }
 
         return true;
+    }
+
+    private void btn_HistorialOp_Click(object sender, EventArgs e)
+    {
+        Form2 frm = new Form2();
+        frm.Show();
     }
 }
